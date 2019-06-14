@@ -1,18 +1,22 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Directive } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
 import * as fromUserActions from '../actions/user.actions';
 import { UserApiService } from '../user-api.service';
+import { ColorReposDirective } from '../color-repos.directive';
 
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
+  
 })
+
 export class Tab2Page {
+  
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   currentLastId: number

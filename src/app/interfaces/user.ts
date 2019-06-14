@@ -1,5 +1,9 @@
 export interface User {
     id: string,
-    avatar: string,
-    loginName: string
+    userAvatar: '',
+    fullName: '',
+    bio: '',
+    company: '',
+    location: '',
+    webXBlog: ''
 }

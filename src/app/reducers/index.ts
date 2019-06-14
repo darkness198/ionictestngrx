@@ -37,6 +37,13 @@ export const getLastId = createSelector(
   fromUsers.getLastId
 );
 
+
+export const getCurrentUser = createSelector(
+  getUserState,
+  fromUsers.getCurrentUser
+);
+
+
 // export const getNoteById = createSelector(
 //   getNoteState,
 //   fromNote.getNoteById

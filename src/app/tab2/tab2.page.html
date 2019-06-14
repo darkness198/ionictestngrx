@@ -13,11 +13,12 @@
   </ion-button>
 
   <ion-list>
-    <ion-item *ngFor="let user of (userApiService.users) | async">
+  <ion-item  *ngFor="let user of (userApiService.users) | async" expand="block" [routerLink]="['/tabs/tab1', user.login]" routerDirection="forward">
       <ion-avatar item-start>
         <img src="{{user.avatar_url}}"> 
       </ion-avatar>
-      <span>{{user.login}}</span>
+      <span appColorRepos>{{user.login}}</span>
+      
       <!-- <h2>{{user.first_name}} {{user.last_name}}</h2> -->
     </ion-item>
   </ion-list>

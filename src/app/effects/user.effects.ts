@@ -19,7 +19,18 @@ export class UserEffects {
           catchError(() => EMPTY)
         )
       )
-    
+    );
+  });
+
+  getUser$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(UserActions.getUserByName),
+      mergeMap(action =>
+        this._userApiService.getUserByName(action.username).pipe(
+          map(user => UserActions.getUserSuccess({ user: user })),
+          catchError(() => EMPTY)
+        )
+      )
     );
   });
   // getUsers$: Observable<Action> = this.actions$

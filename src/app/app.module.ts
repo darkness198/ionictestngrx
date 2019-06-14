@@ -17,6 +17,7 @@ import * as fromUsers from './reducers/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './effects/user.effects';
 import { HttpModule } from '@angular/http';
+// import { ColorReposDirective } from './color-repos.directive';
 
 @NgModule({
   declarations: [AppComponent],
