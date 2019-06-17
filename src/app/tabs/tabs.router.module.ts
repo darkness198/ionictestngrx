@@ -34,16 +34,6 @@ const routes: Routes = [
           }
         ]
       },
-      // {
-      //   path: 'tab1/:id',
-      //   children: [
-      //     {
-      //       path: '',
-      //       loadChildren: '../tab1/userCard.module#Tab2PageModule'
-      //     }
-          
-      //   ]
-      // },
       { 
         path: 'tab1/:username', 
         children: [

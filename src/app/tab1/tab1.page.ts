@@ -38,23 +38,14 @@ export class Tab1Page {
     private router: Router,
     private userApiService: UserApiService,
     private _store: Store<AppState>
-    // private service: HeroService
   ) {}
 
   ngOnInit() {
     this.route.paramMap.pipe(map((params: ParamMap) => params.get('username'))).subscribe(username => this.currentName$ = username)
-    this._store.dispatch(fromUserActions.getUserByName({username: this.currentName$}))
-    // this.currentUser$ = this.route.paramMap.pipe(
-    //   switchMap((params: ParamMap) =>
-    //     this.service.getHero(params.get('id')))
-    // );
+    this.searchForUser()
   }
 
-  // gotoHeroes(hero: Hero) {
-  //   let heroId = hero ? hero.id : null;
-  //   // Pass along the hero id if available
-  //   // so that the HeroList component can select that hero.
-  //   // Include a junk 'foo' property for fun.
-  //   this.router.navigate(['/superheroes', { id: heroId, foo: 'foo' }]);
-  // }
+  searchForUser(){
+    this._store.dispatch(fromUserActions.getUserByName({username: this.currentName$}))
+  }
 }

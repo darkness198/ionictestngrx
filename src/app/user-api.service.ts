@@ -40,7 +40,12 @@ export class UserApiService {
 
   getUsers(sinceId){
     return this._http.get(`${API_URL}/users?since=${sinceId}`)
-              .pipe(map(res => res.json()))        
+              .pipe(map(res => {
+                res.json().forEach(user => {
+                  this.store.dispatch(UserActions.getRepos({ login: user.login }))
+                })
+                return res.json()
+              }))        
   }
 
   getUserByName(username){

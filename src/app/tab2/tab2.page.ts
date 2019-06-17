@@ -5,8 +5,6 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
 import * as fromUserActions from '../actions/user.actions';
 import { UserApiService } from '../user-api.service';
-import { ColorReposDirective } from '../color-repos.directive';
-
 
 @Component({
   selector: 'app-tab2',
@@ -20,6 +18,7 @@ export class Tab2Page {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   currentLastId: number
+
   constructor(private _store: Store<AppState>, private userApiService: UserApiService) {}
 
 
